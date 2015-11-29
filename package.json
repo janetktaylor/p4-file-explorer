@@ -10,6 +10,7 @@
     "userid": "^0.2.0"
   },
   "dependencies": {
+    "node-perforce": "0.0.17",
     "pwuid": "^1.1.1"
   }
 }

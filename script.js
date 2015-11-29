@@ -5,6 +5,7 @@ var Menu = remote.require('menu');
 var BrowserWindow = remote.require('browser-window');
 var MenuItem = remote.require('menu-item');
 var shell = require('shell');
+var p4 = require('node-perforce');
 
 var abar = require('address_bar');
 var folder_view = require('folder_view');
