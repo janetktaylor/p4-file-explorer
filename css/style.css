@@ -40,3 +40,7 @@
 .file.focus .icon {
   -webkit-filter: invert(20%);
 }
+
+#infobar {
+  padding: 1em;
+}
