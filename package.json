@@ -6,8 +6,7 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron-rebuild": "^1.0.2",
-    "userid": "^0.2.0"
+    "electron-rebuild": "^1.0.2"
   },
   "dependencies": {
     "node-perforce": "0.0.17",

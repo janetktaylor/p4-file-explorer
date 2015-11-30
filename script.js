@@ -14,15 +14,11 @@ var info_bar = require('file_info_bar');
 
 // append default actions to menu for OSX
 var initMenu = function () {
-  try {
     var nativeMenuBar = new Menu();
     if (process.platform == "darwin") {
       nativeMenuBar.createMacBuiltin && nativeMenuBar.createMacBuiltin("FileExplorer");
     }
-  } catch (error) {
-    console.error(error);
-    setTimeout(function () { throw error }, 1);
-  }
+
 };
 
 var aboutWindow = null;
@@ -64,8 +60,14 @@ $(document).ready(function() {
   var addressbar = new abar.AddressBar($('#addressbar'));
   var infobar = new info_bar.InfoBar( $('#infobar'));
 
-  folder.open(process.cwd());
-  addressbar.set(process.cwd());
+  var setStartDir = function(err, p4info){
+    App.clientRoot = p4info.clientRoot;
+
+    folder.open(App.clientRoot);
+    addressbar.set(App.clientRoot);
+  }
+
+  p4.info(setStartDir);
 
   App.folder = folder;
   App.addressbar = addressbar;
